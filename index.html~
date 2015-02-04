@@ -112,6 +112,23 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 	   		      <!---->
 	   		     <div class="shoes-grid-left">
+			<a href="single.html">				 
+	   		     	<div class="col-md-6 con-sed-grid">
+					
+	   		     		<h4>col-md-6 con-sed-grid</h4>
+							
+						<div class="clearfix"> </div>
+						
+	   		     	</div>
+					</a>
+					<a href="single.html">	
+	   		     	<div class="col-md-6 con-sed-grid sed-left-top">
+	   		     		
+	   		     		<h3>col-md-6 con-sed-grid sed-left-top</h3>
+						
+						<div class="clearfix"> </div>
+	   		     	</div>
+					</a>
 	   		     </div>
 	   		     <div class="products">
 	   		     	<h5 class="latest-product">maybe??</h5>	
