@@ -1,2 +1,2 @@
 # SissvocUserInterface
-the trasition from skeleton HTML to FULL Velocity Template UI
+the transition from skeleton HTML to FULL Velocity Template UI
