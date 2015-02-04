@@ -66,7 +66,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					</div>
 					<div class="clearfix"> </div>
 				</div>
-				<div class="header-bottom-right">				<h6> HERE Include: go to..., page, data format and view. That is "resource-links.vm, page-size-links.vm, view-links.vm and format-links or ....</h6>	
+				<div class="header-bottom-right">
+				
+				<h6> HERE Include:
+				#parse( "partials/page-size-links.vm" )
+				#parse( "partials/view-links.vm" )
+				#parse( "partials/format-links.vm" )
+				#parse( "partials/resource-links.vm" )
+				</h6>	
 					
 					<div class="clearfix"> </div>
 				</div>
