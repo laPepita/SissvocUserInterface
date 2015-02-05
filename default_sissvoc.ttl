@@ -43,7 +43,7 @@
 svoc:default a api:API
 
 ## it would be great if this could be made to help somehow, but ELDA does not currently appear to implement it
-#	; api:base "http://def.seegrid.csiro.au/sissvoc/default"
+	; api:base "/sissvoc"
 
 ## end of TODO:
 ##############################################################
@@ -58,9 +58,6 @@ svoc:default a api:API
 	    api:name "html" ;
 	    api:mimeType "text/html" ;
 	    elda:className "com.epimorphics.lda.renderers.VelocityRendererFactory" ;
-			api:variable [api:name "_resourceRoot"; api:value "{webapp}/lda-assets/velocity/index.vm"];
-		api:variable [api:name "_velocityPath"; api:value "{webapp}/lda-assets/velocity/"];
-
 	   ]
 #			
 # the following property enables the stylesheet to work better, including linking the item properties to their definitions
@@ -108,10 +105,13 @@ svoc:default a api:API
 ## e.g. /sissvoc
 
 	; api:variable [api:name "webapp"; api:value "/sissvoc"]
+	; api:variable [api:name "_resourceRoot"; api:value "{webapp}/lda-assets/"]
+	#; api:variable [api:name "_velocityPath"; api:value "/var/www/elda/assets"]
+	; api:variable [api:name "_velocityPath"; api:value "lda-assets/velocity/"]
 	; api:variable
 		[api:name "SISSDefaultResourceDirBase"; api:value "{webapp}/resources/default/"]
 		, [api:name "myResourceDirBase"; api:value "{webapp}/resources/default/"]
-		, [api:name "_resourceRoot"; api:value "{webapp}/lda-assets/"]
+		#, [api:name "_resourceRoot"; api:value "{webapp}/lda-assets/"]
 		, [api:name "resourcePath"; api:value "{webapp}/default/resource"]
 		, [api:name "resourceEndPoint"; api:value "{webapp}/default/resource"]
 		, [api:name "serviceTitle"; api:value "SISSVoc Default"]
