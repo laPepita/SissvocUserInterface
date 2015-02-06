@@ -54,18 +54,24 @@
 					</div>
 					<div class="clearfix"> </div>
 				</div>
-				<div class="header-bottom-right">
-				
-## Include some of the useful prebuilt functions into the header				
 
-				#parse( "partials/page-size-links.vm" )
-				#parse( "partials/view-links.vm" )
-				#parse( "partials/format-links.vm" )
-				#parse( "partials/resource-links.vm" )
+
+
+		<div class="header-bottom-right">
+##############################
 					
-					
+						<div class="account"><span> </span>#parse( "partials/format-links.vm" )</div>
+							<ul class="login">
+								<li><span> </span>#parse( "partials/resource-links.vm" )</li>
+<li><span> </span>    </li>
+<li><span> </span>#parse( "partials/page-size-links.vm" )</li>
+							</ul>
+						<div class="cart"><span> </span>#parse( "partials/view-links.vm" )</div>
 					<div class="clearfix"> </div>
-				</div>
+				
+
+##############################
+
 				<div class="clearfix"> </div>	
 			</div>
 		</div>
