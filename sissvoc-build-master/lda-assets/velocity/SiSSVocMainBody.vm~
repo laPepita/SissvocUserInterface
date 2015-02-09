@@ -1,0 +1,106 @@
+## This template maintains the main body of the page
+## It includes a contaner Class to group the data together
+## to allow for a decent visual display. Here is where most
+## of the work will need to be done. The areas are split in
+## to: 1 x Menu, 1 x UnderMenuArea, 2 x clearfix responsive boxes.
+## The two boxes are split in to two div classes: ="products" and
+## The top one will contain most if not all the items that result
+## from the SPARQL endpoint query. 
+
+
+<!-- Start the body of the page, We will display the items here-->
+
+	<div class="container">
+
+			<div class="shoes-grid">
+
+	   		        <!---->
+
+		   		     <div class="products">
+		   		     	
+		   		     	  ##Parse the itemslist in to here
+					  #parse( "partials/item-setup.vm")
+					  ##parse( "partials/debug-context.vm" )
+
+		   		     </div>
+		   		     
+		   		     <div class="products">
+
+		   		     	#parse( "partials/qonsole.vm" )	
+		   		     	<a class="view-all" href="product.html">???<span> </span></a> 		     
+		   		     </div>
+
+				<!---->
+
+	   		 </div>   
+
+	<!-- End the container body of the page-->
+
+
+	   		   <!--THIS CODE BELOW RELATES TO THE MENU-->
+
+			   <div class="sub-cate">
+				<div class=" top-nav rsidebar span_1_of_left">
+					<h3 class="cate">CONCEPTS</h3>
+		 <ul class="menu">
+
+
+## GOING TO START THE FOR LOOP HERE #######################################################
+#parse( "macros/item.vm" )
+#parse( "partials/filter-actions.vm" )
+
+
+
+#parse( "partials/displayName.vm" )
+##########################################################
+
+				<li>
+			<ul class="kid-menu">
+				<li><a href="product.html">Single</a></li>
+				<li ><a href="product.html">Double</a></li>
+				<li ><a href="product.html">Triple</a></li>
+			</ul>
+		</li>
+		
+	</ul>
+					</div>
+
+
+
+				<!--initiate accordion (THE JAVASCRIPT THAT ALLOWS DROP DOWN OF THINGS-->
+
+## WILL NOT BE PARSED DUE TO JAVASCRIPT CONTAINING DOLLAR SIGNS --- START
+#[[
+		<script type="text/javascript">
+			$(function() {
+			    var menu_ul = $('.menu > li > ul'),
+			           menu_a  = $('.menu > li > a');
+			    menu_ul.hide();
+			    menu_a.click(function(e) {
+			        e.preventDefault();
+			        if(!$(this).hasClass('active')) {
+			            menu_a.removeClass('active');
+			            menu_ul.filter(':visible').slideUp('normal');
+			            $(this).addClass('active').next().stop(true,true).slideDown('normal');
+			        } else {
+			            $(this).removeClass('active');
+			            $(this).next().stop(true,true).slideUp('normal');
+			        }
+			    });
+			
+			});
+		</script>
+]]#
+## WILL NOT BE PARSED DUE TO JAVASCRIPT CONTAINING DOLLAR SIGNS --- END
+
+					<div class=" chain-grid menu-chain">
+	   		     		
+	   		     	</div>
+##TODO ---- TEST The best way to call the sparql endpoint
+	   		     	  	
+			</div>
+	   		    <div class="clearfix"> </div>        	         
+		</div>
+	
+	
+	<!--End the real body of the page, that is the content and the menu to the left-->

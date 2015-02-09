@@ -1,0 +1,82 @@
+
+#parse( "macros/navigation.vm" )
+
+## This is the navigation header class of the page
+## Similar to the footer the Header is split into
+## Two main parts, Top and Bottm, which are then 
+## further divided left to right. The class headings
+## are named accordingly. Parsed here are 4 files	
+## TODO - implement the search function from here
+
+<!--header-->
+	<div class="header">
+		<div class="top-header">
+			<div class="container">
+				<div class="top-header-left">
+					<ul class="support">
+
+					</ul>
+					<ul class="support">
+<a href="index.html"><img src="${images}/siss-icon-64.png" alt=" " /></a>
+						
+					
+						<li><a href="#">SISSVoc | <span class="live">The linked Data API</span></a></li>
+					</ul>
+					<div class="clearfix"> </div>
+				</div>
+				<div class="top-header-right">
+				 <div class="down-top">		
+						  <select class="in-drop">
+							  <option value="English" class="in-of">English</option>
+							  <option value="Japanese" class="in-of">Japanese</option>
+							  <option value="French" class="in-of">French</option>
+							  <option value="German" class="in-of">German</option>
+							</select>
+					 </div>
+					
+					 <!--END THE TOP HEADER MARGIN (The colored one)-->
+					 
+					 
+					  <!--Start the bottom HEADER, we will incorparate VT in here-->
+					  
+					<div class="clearfix"> </div>	
+				</div>
+				<div class="clearfix"> </div>		
+			</div>
+		</div>
+		<div class="bottom-header">
+			<div class="container">
+				<div class="header-bottom-left">
+					<div class="logo">
+						<a href=#><img src="${images}/TopLeft.gif" alt=" " /></a>
+					</div>
+					<div class="search">
+						<input type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" >
+						<input type="submit"  value="SEARCH">
+
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+
+
+
+		<div class="header-bottom-right">
+##############################
+					
+  <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        #parse( "partials/resource-links.vm" )
+        #parse( "partials/page-size-links.vm" )
+        #parse( "partials/format-links.vm" )
+        #parse( "partials/view-links.vm" )
+      </ul>
+    </div><!-- /.navbar-collapse -->
+##############################
+
+				<div class="clearfix"> </div>	
+			</div>
+		</div>
+	</div>
+	
+	 <!--End the bottom HEADER-->
