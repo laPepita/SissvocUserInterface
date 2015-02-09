@@ -231,3 +231,8 @@
     </span>
   #end
 #end
+
+#macro( displayName $hnode )
+#set( $resource = $hnode.rdfNode() )
+ #itemName( $resource )
+#end
