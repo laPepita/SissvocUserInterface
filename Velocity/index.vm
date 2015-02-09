@@ -24,6 +24,10 @@
 <!--//fonts-->
 <script src="$assets/js/jquery.min.js"></script>
 <!--script-->
+    <!--[if lt IE 10]>
+      <script src="${assets}/js/vendor/jquery.xdomainrequest.js"></script>
+    <![endif]-->
+#parse( "partials/head-extensions.vm" )
 </head>
 
 

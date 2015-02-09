@@ -1,3 +1,6 @@
+
+#parse( "macros/navigation.vm" )
+
 ## This is the navigation header class of the page
 ## Similar to the footer the Header is split into
 ## Two main parts, Top and Bottm, which are then 
@@ -60,16 +63,15 @@
 		<div class="header-bottom-right">
 ##############################
 					
-						<div class="account"><span> </span>#parse( "partials/format-links.vm" )</div>
-							<ul class="login">
-								<li><span> </span>#parse( "partials/resource-links.vm" )</li>
-<li><span> </span>    </li>
-<li><span> </span>#parse( "partials/page-size-links.vm" )</li>
-							</ul>
-						<div class="cart"><span> </span>#parse( "partials/view-links.vm" )</div>
-					<div class="clearfix"> </div>
-				
-
+  <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        #parse( "partials/resource-links.vm" )
+        #parse( "partials/page-size-links.vm" )
+        #parse( "partials/format-links.vm" )
+        #parse( "partials/view-links.vm" )
+      </ul>
+    </div><!-- /.navbar-collapse -->
 ##############################
 
 				<div class="clearfix"> </div>	
