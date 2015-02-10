@@ -6,3 +6,5 @@ the transition from skeleton HTML to FULL Velocity Template UI
 
 We are making some headway now
 
+You only need the sisvoc-build-master folder and to apply changes to the velocity template you just need to edit the templates in the lda-assets/velocity folder
+
