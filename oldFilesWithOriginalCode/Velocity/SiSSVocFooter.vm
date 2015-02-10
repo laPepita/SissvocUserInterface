@@ -1,0 +1,58 @@
+##This is the footer class, it controls both the
+##bottom and top footer, you may include any 
+##references of work here.  There are 2 main
+##classes; footer-top and footer-bottom and they
+##are further split up from left to right. The
+##class names are pretty explainitory. 
+
+<div class="footer">
+		<div class="footer-top">
+			<div class="container">
+
+
+
+				<div class="latter">
+					<p>Left foot</p>
+					<div class="sub-left-right">
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+
+
+
+				<div class="latter-right">
+					<p>Right foot</p>
+					<div class="clearfix"> </div>
+				</div>
+
+
+				<div class="clearfix"> </div>
+
+
+			</div>
+		</div>
+
+
+
+
+		<div class="footer-bottom">
+			<div class="container">
+				<div class="footer-bottom-cate">
+					<p align="left" >Developed at <a href="http://www.csiro.au">CSIRO </a></p>
+					
+				</div>
+				<div class="footer-bottom-cate bottom-grid-cat">
+					<h6>Mid Left Footer</h6>
+					
+				</div>
+				<div class="footer-bottom-cate">
+					<h6>Mid Right Footer</h6>
+					
+				</div>
+				<div class="footer-bottom-cate cate-bottom">
+					<p align="center" >Powered by Elda, an implimentaion of the <a href="https://code.google.com/p/linked-data-api/">Linked Data API</a></p>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
