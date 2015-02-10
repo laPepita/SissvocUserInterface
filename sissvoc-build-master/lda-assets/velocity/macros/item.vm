@@ -48,7 +48,7 @@
 #macro( itemURI $resource $h $css )
   <div class="$css">
     #setResourceHref( $resource.getURI() )
-    <$h class="resource-uri"><a href="$href">$resource.getURI()</a></$h>
+    <$h class="resource-uri"><stong> URI : </stong><a href="$href">  $resource.getURI()</a></$h>
   </div>
 #end
 
@@ -128,7 +128,7 @@
 #macro( propertyPredicate $p )
   <div class="rdf predicate">
     #setResourceHref( $p.getURI() )
-    <a href="$href">$p.getName()</a>
+    <a href="$href"><strong>$p.getName()</strong></a>
   </div>
 #end
 
@@ -328,7 +328,7 @@ Label : None Listed
 #foreach($r in $resource.listPropertyValues("skos:narrower"))
 #set($num = $foreach.count - 1)
 
-<li class="subitem1"><a href="($resource.listPropertyValues("skos:narrower").get($num))">($resource.listPropertyValues("skos:narrower").get($num))</a></li>
+<li class="subitem1"><a href="$href">($resource.listPropertyValues("skos:narrower").get($num))</a></li>
 #end
 
 
