@@ -6,7 +6,8 @@
 ## The two boxes are split in to two div classes: ="products" and
 ## The top one will contain most if not all the items that result
 ## from the SPARQL endpoint query. 
-
+#parse( "macros/item.vm" )
+#parse( "partials/filter-actions.vm" )
 
 <!-- Start the body of the page, We will display the items here-->
 
@@ -18,15 +19,18 @@
 
 		   		     <div class="products">
 		   		     	
-		   		     	  ##Parse the itemslist in to here
-					  #parse( "partials/item-setup.vm")
-					  ##parse( "partials/debug-context.vm" )
+		   		     	  #parse( "partials/displayTable.vm" )
 
 		   		     </div>
 		   		     
 		   		     <div class="products">
 
-		   		     	#parse( "partials/qonsole.vm" )	
+		   		     	
+					##Parse the itemslist in to here
+					#parse( "partials/item-setup.vm")
+					##parse( "partials/debug-context.vm" )
+
+	
 		   		     	<a class="view-all" href="product.html">???<span> </span></a> 		     
 		   		     </div>
 
@@ -54,13 +58,7 @@
 #parse( "partials/displayName.vm" )
 ##########################################################
 
-				<li>
-			<ul class="kid-menu">
-				<li><a href="product.html">Single</a></li>
-				<li ><a href="product.html">Double</a></li>
-				<li ><a href="product.html">Triple</a></li>
-			</ul>
-		</li>
+			
 		
 	</ul>
 					</div>

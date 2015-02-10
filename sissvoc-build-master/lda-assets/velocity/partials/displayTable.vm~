@@ -1,0 +1,14 @@
+
+#groupVisualExtensions( $hierarchy )
+#foreach( $item in $hierarchy.roots() )
+#set($num = $foreach.count - 1)
+
+###parse("resource.vm")
+
+
+#conceptTableDisplay($hierarchy.roots().get($num))
+
+
+#end
+
+

@@ -6,11 +6,9 @@
     <ul class="dropdown-menu">
       #if( $page.itemsPerPage() > 0 )
         #pageSizeLink( $page, "1" )
-        #pageSizeLink( $page, "5" )
         #pageSizeLink( $page, "10" )
         #pageSizeLink( $page, "25" )
         #pageSizeLink( $page, "50" )
- 	#pageSizeLink( $page, "100" )
         <li class="divider"></li>
       #end
       #pageNavigationLink( $page.firstPage(), "fa-fast-backward", "first" )

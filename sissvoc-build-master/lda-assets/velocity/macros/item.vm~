@@ -1,5 +1,6 @@
 ## Macros for displaying a single item
 #parse( "macros/item-extensions.vm" )
+#parse( "macros/macroFromLDR.vm" )
 
 #macro( eldaItem $hnode )
   #showRdfResource( $hnode, "section", "outer" )
@@ -240,9 +241,98 @@
 #end
 
 ## Display the name of the resource
+
 #macro( itemNameVanilla $resource )
- 
       $resource.getName()
+#end
+
+######## ADDED on Feb 10 ############
+## Display everything about the resource in a table
+#macro( conceptTableDisplay $hnode )
+#set( $resource = $hnode.rdfNode() )
+
+
+
+
+
+<h4>Description</h4>
+#description($resource, "<p><em>no description supplied</em></p>")
+
+#set($r=false)
+#set($r = $entity.getPropertyValue("skos:topConceptOf") )
+#if($r)
+  <h4>Is a top concept in scheme</h4>
+  <ul>
+    <li>#linkfor($r)</li>
+  </ul>
+#end
+
+
+#if($resource.getPropertyValue("skos:related"))
+  <h4>Related concepts</h4>
+  <ul>
+    #foreach($r in $resource.listPropertyValues("skos:related"))
+ ##    <li>#linkfor($resource)</li>
+LALALA
+    #end
+  </ul>
+#end
+
+
+
+
+
+
+
+
+
+
+#if($resource.getPropertyValue( "rdfs:label" ).getLexicalForm())
+<h2>$resource.getPropertyValue( "rdfs:label" ).getLexicalForm()</h2>
+#end
+
+<table>
+  <tr>
+#if($resource.getPropertyValue("skos:broader"))
+ Broader :<ul>
+#foreach($r in $resource.listPropertyValues("skos:broader"))
+    		<li>$resource.getPropertyValue("skos:broader").getLexicalForm()</li>
+#end	
+</ul>
+#else 
+Broader : None Listed
+#end
+  </tr>
+  <tr>
+#if($resource.getPropertyValue("rdfs:label"))
+Label :<ul>
+#foreach($r in $resource.listPropertyValues("rdfs:label"))
+    		<li>$resource.getPropertyValue("rdfs:label").getLexicalForm()</li>
+#end	
+</ul>
+#else 
+Label : None Listed
+#end
+
+</ul>
+  </tr>
+</table>
+
+
 
 #end
+
+################## MIGRATING TO MACRO @ 11:55 ####
+
+#macro( printNarrower $resource)
+#foreach($r in $resource.listPropertyValues("skos:narrower"))
+#set($num = $foreach.count - 1)
+
+<li class="subitem1"><a href="($resource.listPropertyValues("skos:narrower").get($num))">($resource.listPropertyValues("skos:narrower").get($num))</a></li>
+#end
+
+
+    
+#end
+
 

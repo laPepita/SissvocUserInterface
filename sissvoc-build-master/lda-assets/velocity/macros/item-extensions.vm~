@@ -36,7 +36,10 @@
 ## behaviours:
 ## * if at least some items have locations, show a map for the whole results group
 #macro( groupVisualExtensions $hierarchy )
-
+<h1> ye </h1>
+  #if( $mapDisplay)
+    #groupMap( $hierarchy )
+  #end
 #end
 
 ## Show a map for a group of results

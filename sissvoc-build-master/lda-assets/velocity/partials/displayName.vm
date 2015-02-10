@@ -1,36 +1,38 @@
 #groupVisualExtensions( $hierarchy )
 #foreach( $item in $hierarchy.roots() )
 #set($num = $foreach.count - 1)
+#set( $resource = $hierarchy.roots().get($num).rdfNode() )
 
-#*
 
-#if( !item.hasNarrower)
 
+
+#if(!$resource.getPropertyValue("skos:narrower"))
 	<ul class="cute">
-		<li class="subitem1"><a href="product.html">$hierarchy.roots().get($num)</a></li>
+		<li class="subitem1"><a href="product.html">#displayName( $hierarchy.roots().get($num) )</a></li>
 	</ul>
-
 #else
 
-*#
 
-<li class="item1"><a href="#">#displayName( $hierarchy.roots().get($num) )<img class="arrow-img" align="middle" src="$images/downArrowButton.png" alt=""/> </a>
+<li class="item1">
+
+<a href="#">#displayName( $hierarchy.roots().get($num) )<img class="arrow-img" align="middle" src="$images/downArrowButton.png" alt=""/> </a>
 			
 
 <ul class="cute">
-			<li class="subitem1"><a href="product.html">One </a></li>
+			#printNarrower($resource)
 			</ul>
 
 		</li>
 
 
 #end
+#end
  
 #*
 
 for each item in the vocab ~
 
-if the item does not have a narrower then kid menu item ~ TODO REF THE CONCEPT
+if the item does not have a narrower then kid menu item ~
 
 else
 
