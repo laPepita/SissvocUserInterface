@@ -12,8 +12,9 @@
 
 
 				<div class="latter">
-					<p>Left foot</p>
+					<p>Developed at <a href="http://www.csiro.au">CSIRO | the Land and Water Flagship </a></p>
 					<div class="sub-left-right">
+
 					</div>
 					<div class="clearfix"> </div>
 				</div>
@@ -21,7 +22,8 @@
 
 
 				<div class="latter-right">
-					<p>Right foot</p>
+					
+
 					<div class="clearfix"> </div>
 				</div>
 
@@ -44,18 +46,18 @@
 				
 				</div>
 				<div class="footer-bottom-cate bottom-grid-cat">
-							<p>Developed at <a href="http://www.csiro.au">CSIRO </a></p>
-				
+							
+				<h6> </h6>
 					
 				</div>
 
 
 				<div class="footer-bottom-cate">
-					<h6>Mid Right Footer</h6>
+				<h6> </h6>	
 					
 				</div>
 				<div class="footer-bottom-cate cate-bottom">
-					<p align="center" >Powered by Elda, an implimentaion of the <a href="https://code.google.com/p/linked-data-api/">Linked Data API</a></p>
+					<p align="center" >Powered by Elda, an implementation of the <a href="https://code.google.com/p/linked-data-api/">Linked Data API</a></p>
 				</div>
 				<div class="clearfix"> </div>
 			</div>

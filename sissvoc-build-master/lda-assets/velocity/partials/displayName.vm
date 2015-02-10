@@ -14,7 +14,7 @@
 
 *#
 
-<li class="item1"><a href="#">#displayName( $hierarchy.roots().get($num) )<img class="arrow-img" src="$images/downArrowButton.png" alt=""/> </a>
+<li class="item1"><a href="#">#displayName( $hierarchy.roots().get($num) )<img class="arrow-img" align="middle" src="$images/downArrowButton.png" alt=""/> </a>
 			
 
 <ul class="cute">
