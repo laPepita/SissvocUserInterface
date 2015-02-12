@@ -1,0 +1,165 @@
+## Macros for displaying a single item
+#parse( "macros/item-extensions.vm" )
+
+
+
+
+
+## Display a list of types for the resource, if any are known
+#macro( itemTypes $resource $css )
+  #set( $types = $resource.types() )
+  #if( $types.size() > 0 )
+    <div class="$css">
+      <div class="resource-types">
+        a
+        <ul class="list-inline">
+          #foreach( $type in $types )
+            <li>
+              #setResourceHref( $type.getURI() )
+              <a href="$href">$type.getName()</a>
+            </li>
+          #end
+        </ul>
+      </div>
+    </div>
+  #end
+#end
+
+## Show the various properties of the item
+#macro( itemProperties $hNode $level )
+  #if( $hNode.children().size() > 0)
+    <div class="col-md-12">
+      <ul class="resource-properties">
+        #renderProperties( $hNode.children(), 4, 8 )
+      </ul>
+    </div>
+  #end
+#end
+
+## NARROW
+#macro( itemPropertiesNarrow $hNode $level )
+  #if( $hNode.children().size() > 0)
+        #renderPropertiesNarrow( $hNode.children(), 4, 8 )
+  #end
+#end
+
+## NARROW
+#macro( renderPropertiesNarrow $hNodes, $cw0, $cw1 )
+  #foreach( $hNode in $hNodes )
+        #resourceValuedNodeNarrow( $hNode, $cw0, $cw1 )
+      #end
+#end
+
+## NARROW
+#macro( resourceValuedNodeNarrow $hNode $cw0 $cw1 )
+  <div class="row">
+    <li class="">
+      <div class="col-md-$cw0">
+        #propertyPredicateNarrow( $hNode.terminalLink() )
+      </div>
+      <div class="col-md-$cw1">
+        #propertyValueNarrow( $hNode )
+      </div>
+    </li>
+  </div>
+#end
+
+## Narrow
+#macro( propertyPredicateNarrow $p )
+
+$p
+
+#end
+
+## NARROW
+## Determine how to present a property value - single item or list?
+#macro( propertyValueNarrow $node )
+  #if( $node.hasSiblings() )
+    #propertyMultiValueNarrow( $node )
+
+  #end
+#end
+
+
+
+
+
+
+
+
+
+
+
+
+## Show a property-value pair where the value is known to be a literal
+#macro( literalValuedNode $hNode $cw0 $cw1 )
+  <div class="row">
+    <li class="">
+      <div class="col-md-$cw0">
+        #propertyPredicate( $hNode.terminalLink() )
+      </div>
+      <div class="col-md-$cw1">
+        #propertyValueNarrow( $hNode )
+      </div>
+    </li>
+  </div>
+#end
+
+
+
+
+
+
+## List value of a property
+#macro( propertyMultiValueNarrow $node )
+  <ul class="rdf object multiple">
+    <li class="first $node.hintsString()">
+      
+ #set( $resource = $node.rdfNode() )
+$resource.getName()
+
+
+    </li>
+    #foreach( $sibling in $node.siblings())
+      <li class="$sibling.hintsString()">
+        #propertyObjectNarrow( $sibling )
+      </li>
+    #end
+  </ul>
+#end
+
+## Show the value of a property-value
+#macro( propertyObjectNarrow $node )
+    #propertyObjectResourceNarrow( $node )
+#end
+
+
+
+## Show a resource-value ----- IMPORTANT FOR NARROW
+#macro( propertyObjectResourceNarrow $node )
+  #if( $node.isSimpleResource())
+$node.getName()
+  #else  
+
+ #set( $resource = $node.rdfNode() )
+#compareMethodNarrow($resource, $resource, "2" )
+
+  #end
+#end
+
+#macro( compareMethodNarrow $theURL, $theSkosResult, $type)
+
+#if( $type.equals( "1" ))
+
+$node.getName()
+
+#elseif( $theURL.equals( $theSkosResult ))
+$resource.getName()
+#end
+
+#end
+
+## WE ARE STILL working on this part.... YOu can run it and get the url's but then we will need to camplare them etc.... to know that they are 
+
+
+

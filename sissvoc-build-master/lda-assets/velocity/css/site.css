@@ -58,10 +58,10 @@ section {
 }
 
 h1.resource-label {
-  font-size: 20pt;
+  font-size: 25pt;
   font-weight: bold;
-  background-color: #000000;
-  color: white;
+  background-color: RGBA(255,	165,	0, 0.2);
+  color: black;
   margin: 0;
   padding: 5px;
  text-align: left; /*text will be horizontally centered in the image*/
@@ -69,10 +69,10 @@ h1.resource-label {
 
 h2.resource-uri, h4.resource-uri, .resource-types {
   font-size: 10pt;
-  color: #666;
+  color: #333;
   margin: 0;
   padding: 3px 5px;
-  background-color: ghostwhite;
+  background-color: RGBA(255,	165,	0, 0.03);
 }
 
 .resource-types > ul {
@@ -170,7 +170,7 @@ div.rdf {
 }
 
 .property-value-row.odd  {
-  /*background-color: #f5f5f9;*/
+  background-color: RGBA(255,	165,	0, 0.03);
 }
 
 .property-value-row + .property-value-row {
@@ -192,10 +192,13 @@ ul.resource-properties {
 
 /* nested resources */
 .nested {
-  display: inline-block;
-  border: 1px solid #3f51b5;
-  border-radius: 4px;
-  margin: 4px 0;
+ display: inline-block;
+  border: 2px solid silver;
+  border-style: solid;
+  border-bottom: solid silver;
+  border-top: solid silver;
+  border-radius: 5px;
+  margin: 3px 0;
   max-width: 100%;
   width: 100%;
 }
@@ -206,12 +209,12 @@ ul.resource-properties {
 }
 
 .nested h3 {
-  font-size: 10pt;
+  font-size: 11pt;
   margin: 0;
-  color: white;
-  background-color: #3f51b5;
-  padding: 3px;
-  border-radius: 3px;
+  color: black;
+  background-color: RGBA(255,	165,	0, 0.1);
+  padding: 1px;
+  border-radius: 5px;
 }
 
 .rdf.resource.nested .rdf.object {
@@ -245,7 +248,7 @@ ul.resource-properties {
 }
 
 .filter-actions button {
-  color: #5c6bc0;
+  color: #ff9900;
 }
 
 /* Popovers */

@@ -23,10 +23,15 @@
     <$elem class="rdf resource $level">
       #itemName( $resource, "h3", "", $hnode )
       #itemURI( $resource, "h4", "" )
-      #itemTypes( $resource )
-      #itemVisualExtension( $hnode, "row" )
+ #setResourceHref( $resource.getURI() )
+
+##<h>Label : <a href="$href">$resource.getName()</a></h>
+
+
+##      #itemTypes( $resource )
+##      #itemVisualExtension( $hnode, "row" )
       <div class="row">
-        #itemProperties( $hnode, $level )
+##        #itemProperties( $hnode, $level )
       </div>
     </$elem>
   #end
@@ -183,10 +188,14 @@
     #setResourceHref( $node.getURI() )
     <a href="$href" class="rdf object resource simple">$node.getName()</a>
     #actionsMenu( $node )
-  #else
-    <div class="rdf object nested">
-      #showRdfResource( $node, "div", "nested" )
-    </div>
+  #else  
+
+#setResourceHref( $node.getURI() )
+    <a href="$href" class="rdf object resource simple">$node.getName()</a>
+    #actionsMenu( $node )
+
+ ## leaving out for now    #showRdfResource( $node, "div", "nested" )
+    
   #end
 #end
 
@@ -324,7 +333,9 @@ Label : None Listed
 
 ################## MIGRATING TO MACRO @ 11:55 ####
 
-#macro( printNarrower $resource)
+#macro( printNarrower $hnode)
+#set( $resource = $hnode.rdfNode() )
+#setResourceHref( $resource.getURI() )
 #foreach($r in $resource.listPropertyValues("skos:narrower"))
 #set($num = $foreach.count - 1)
 

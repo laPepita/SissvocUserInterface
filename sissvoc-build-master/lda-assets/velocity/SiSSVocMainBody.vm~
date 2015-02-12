@@ -18,9 +18,11 @@
 	   		        <!---->
 
 		   		     <div class="products">
-		   		     	
-		   		     	  #parse( "partials/displayTable.vm" )
 
+#* For testing purposes
+		   		     	  #parse( "partials/displayName.vm" )
+		   		     	  #parse( "partials/displayTable.vm" )
+*#
 		   		     </div>
 		   		     
 		   		     <div class="products">

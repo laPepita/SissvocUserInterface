@@ -16,13 +16,15 @@
 			<div class="shoes-grid">
 
 	   		        <!---->
-
+#* For testing purposes
 		   		     <div class="products">
-		   		     	
+
+
+		   		     	  #parse( "partials/displayName.vm" )
 		   		     	  #parse( "partials/displayTable.vm" )
 
 		   		     </div>
-		   		     
+*#		   		     
 		   		     <div class="products">
 
 		   		     	
