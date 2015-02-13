@@ -6,7 +6,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 --*/
 body{
 	background: #fff;
-	font-family: 'Open Sans', sans-serif;
+	font-family: "Georgia";
 }
 body a{
 	transition: 0.5s all;
@@ -234,7 +234,7 @@ ul.cute li{
 }
 .arrow-img {
 	padding: 0em 0em 0 6.5em;
-	float: right;
+	/*float: right;*/
 }
 .img-arrow{
 	padding: 0 0 0 8em;

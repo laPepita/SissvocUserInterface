@@ -25,6 +25,12 @@
 					<div class="clearfix"> </div>
 				</div>
 				<div class="top-header-right">
+
+#parse( "templatesForLDR/navbar.vm" )
+
+
+#* NOT IN USE, IS REPLACED BY THE SEARCH FUNCTION
+
 				 <div class="down-top">		
 						  <select class="in-drop">
 							  <option value="English" class="in-of">English</option>
@@ -34,6 +40,8 @@
 							</select>
 					 </div>
 					
+*#
+
 					 <!--END THE TOP HEADER MARGIN (The colored one)-->
 					 
 					 
@@ -50,12 +58,16 @@
 					<div class="logo">
 						<a href=#><img src="${images}/TopLeft.gif" alt=" " /></a>
 					</div>
+
+#*
 					<div class="search">
 						<input type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" >
 						<input type="submit"  value="SEARCH">
 
 					</div>
 					<div class="clearfix"> </div>
+*#
+
 				</div>
 
 
